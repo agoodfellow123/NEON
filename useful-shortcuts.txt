@@ -1,0 +1,9 @@
+spc + e - file tree
+spc + i - functions list
+spc + z + a - toggle fold
+space x + x or F8 - toggle diagnostics
+F5 Run
+F6 Compiler menu
+F7 Terminal
+
+:TSInstall yaml
