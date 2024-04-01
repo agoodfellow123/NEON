@@ -23,7 +23,7 @@
 	            transparent = true,
 	            italic_comments = true,
 	            hide_fillchars = true,
-	            borderless_telescope = true,
+-- 	            borderless_telescope = true,
 	            terminal_colors = true,
 
 	            require("notify").setup({
@@ -154,7 +154,27 @@
         } or nil,
         statusline = { -- UI statusbar
           hl = { fg = "fg", bg = "bg" },
-          lib.component.mode(),
+          lib.component.mode({
+--           mode_text =  { pad_text = "center" },
+          surround = {
+            color = mode_bg, },
+          update = {  "ModeChanged", pattern = "*:*" },
+          mode_colors = {
+            n = "red" ,
+            i = "green",
+            v = "cyan",
+            V =  "cyan",
+            ["\22"] =  "cyan",
+            c =  "orange",
+            s =  "purple",
+            S =  "purple",
+            ["\19"] =  "purple",
+            R =  "orange",
+            r =  "orange",
+            ["!"] =  "red",
+            t =  "red",
+            },
+          }),
           lib.component.git_branch(),
           lib.component.file_info(),
           lib.component.git_diff(),
@@ -171,10 +191,10 @@
           lib.component.cmd_info(),
           lib.component.fill(),
           lib.component.lsp(),
-          lib.component.compiler_state(),
+--           lib.component.compiler_state(),
           lib.component.virtual_env(),
           lib.component.nav(),
-          lib.component.mode { surround = { separator = "right" } },
+--           lib.component.mode { surround = { separator = "right" } },
         },
       }
     end,
@@ -256,8 +276,6 @@
               enable = false,
             },
 
-            use_saga_diagnostic_sign = false,
-
               code_action_keys = {
                 quit = "q", "<ESC>",
               },
@@ -265,6 +283,10 @@
               hover_doc_keys = {
                 quit = "q", "<ESC>",
               },
+
+              ui = {
+                code_action = ''
+              }
 
 --               hover_doc = {
 --                 keys = {

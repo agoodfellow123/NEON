@@ -3,6 +3,7 @@ local M = {}
 base.default_colorscheme = "cyberdream"
 
 vim.diagnostic.config({
+	virtual_text = false,
 	virtual_text = {
 		prefix = '●',
 -- 		message = "\n",
