@@ -11,9 +11,12 @@ if vim.loader and vim.fn.has "nvim-0.9.1" == 1 then vim.loader.enable() end
 -- Source config files by order.
 for _, source in ipairs {
   "base.1-options",
+  "base.1-z-options",
   "base.2-lazy",
   "base.3-autocmds",
+  "base.3-z-autocmds",
   "base.4-mappings",
+  "base.4-z-mappings",
 } do
   local status_ok, fault = pcall(require, source)
   if not status_ok then vim.api.nvim_err_writeln("Failed to load " .. source .. "\n\n" .. fault) end

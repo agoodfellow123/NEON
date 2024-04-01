@@ -282,9 +282,9 @@ if is_available "nvim-treesitter" then
 end
 
 -- nvim updater
-maps.n["<leader>pD"] = { "<cmd>DistroUpdate<cr>", desc = "Distro update" }
-maps.n["<leader>pv"] = { "<cmd>DistroReadVersion<cr>", desc = "Distro version" }
-maps.n["<leader>pc"] = { "<cmd>DistroReadChangelog<cr>", desc = "Distro changelog" }
+-- maps.n["<leader>pD"] = { "<cmd>DistroUpdate<cr>", desc = "Distro update" }
+-- maps.n["<leader>pv"] = { "<cmd>DistroReadVersion<cr>", desc = "Distro version" }
+-- maps.n["<leader>pc"] = { "<cmd>DistroReadChangelog<cr>", desc = "Distro changelog" }
 
 -- buffers/tabs [buffers ]--------------------------------------------------
 maps.n["<leader>c"] = { -- Close window and buffer at the same time.
@@ -1271,12 +1271,12 @@ if is_available "markdown-preview.nivm" or is_available "markmap.nvim" or is_ava
 end
 
 -- [neural] -----------------------------------------------------------------
-if is_available "neural" or is_available "copilot" then
-  maps.n["<leader>a"] = {
-    function() require("neural").prompt() end,
-    desc = "Ask chatgpt",
-  }
-end
+-- if is_available "neural" or is_available "copilot" then
+--   maps.n["<leader>a"] = {
+--     function() require("neural").prompt() end,
+--     desc = "Ask chatgpt",
+--   }
+-- end
 
 -- hop.nivm ----------------------------------------------------------------
 if is_available "hop.nvim" then
