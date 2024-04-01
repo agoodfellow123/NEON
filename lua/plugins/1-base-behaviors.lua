@@ -679,33 +679,33 @@ return {
 
   -- distroupdate.nvim [distro update]
   -- https://github.com/Zeioth/distroupdate.nvim
-  {
-    "Zeioth/distroupdate.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim"
-    },
-    cmd = {
-      "DistroFreezePluginVersions",
-      "DistroReadChangelog",
-      "DistroReadVersion",
-      "DistroUpdate",
-      "DistroUpdateRevert"
-    },
-    opts = function()
-      local utils = require("base.utils")
-      local config_dir = utils.os_path(vim.fn.stdpath "config" .. "/lua/base/")
-      return {
-        channel = "stable", -- stable/nightly
-        hot_reload_files = {
-          config_dir .. "1-options.lua",
-          config_dir .. "4-mappings.lua"
-        },
-        hot_reload_callback = function()
-          vim.cmd(":silent! colorscheme " .. base.default_colorscheme) -- nvim     colorscheme reload command
-          vim.cmd(":silent! doautocmd ColorScheme")                    -- heirline colorscheme reload event
-        end
-      }
-    end
-  },
+--   {
+--     "Zeioth/distroupdate.nvim",
+--     dependencies = {
+--       "nvim-lua/plenary.nvim"
+--     },
+--     cmd = {
+--       "DistroFreezePluginVersions",
+--       "DistroReadChangelog",
+--       "DistroReadVersion",
+--       "DistroUpdate",
+--       "DistroUpdateRevert"
+--     },
+--     opts = function()
+--       local utils = require("base.utils")
+--       local config_dir = utils.os_path(vim.fn.stdpath "config" .. "/lua/base/")
+--       return {
+--         channel = "stable", -- stable/nightly
+--         hot_reload_files = {
+--           config_dir .. "1-options.lua",
+--           config_dir .. "4-mappings.lua"
+--         },
+--         hot_reload_callback = function()
+--           vim.cmd(":silent! colorscheme " .. base.default_colorscheme) -- nvim     colorscheme reload command
+--           vim.cmd(":silent! doautocmd ColorScheme")                    -- heirline colorscheme reload event
+--         end
+--       }
+--     end
+--   },
 
 } -- end of return

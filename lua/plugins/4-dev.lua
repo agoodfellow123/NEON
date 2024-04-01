@@ -309,22 +309,22 @@ return {
   --  NOTE: In order for this plugin to work, you will have to set
   --        the next env var in your OS:
   --        OPENAI_API_KEY="my_key_here"
-  {
-    "dense-analysis/neural",
-    cmd = { "Neural" },
-    config = function()
-      require("neural").setup {
-        source = {
-          openai = {
-            api_key = vim.env.OPENAI_API_KEY,
-          },
-        },
-        ui = {
-          prompt_icon = ">",
-        },
-      }
-    end,
-  },
+--   {
+--     "dense-analysis/neural",
+--     cmd = { "Neural" },
+--     config = function()
+--       require("neural").setup {
+--         source = {
+--           openai = {
+--             api_key = vim.env.OPENAI_API_KEY,
+--           },
+--         },
+--         ui = {
+--           prompt_icon = ">",
+--         },
+--       }
+--     end,
+--   },
 
   --  copilot [github code suggestions]
   --  https://github.com/github/copilot.vim
@@ -840,6 +840,7 @@ return {
       local neotest_ns = vim.api.nvim_create_namespace "neotest"
       vim.diagnostic.config({
         virtual_text = {
+        prefix = '●',
           format = function(diagnostic)
             local message = diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
             return message
