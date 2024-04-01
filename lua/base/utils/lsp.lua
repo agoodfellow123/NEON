@@ -50,7 +50,9 @@ M.apply_default_lsp_settings = function()
 
   -- Set default diagnostics
   local default_diagnostics = {
-    virtual_text = true,
+    	virtual_text = {
+		prefix = '●',
+	},
     signs = {
       text = {
         [vim.diagnostic.severity.ERROR] = utils.get_icon("DiagnosticError"),
