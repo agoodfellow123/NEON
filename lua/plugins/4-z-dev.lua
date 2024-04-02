@@ -12,7 +12,7 @@ return
       opts = {
         keys = {
 
-        vim.api.nvim_set_keymap("n", "<Leader>a", "<cmd>CodeCompanionToggle<cr>", { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "<Leader>a", "<cmd>Code companion toggle<cr>", { noremap = true, silent = true })
 
         }
 
@@ -20,6 +20,21 @@ return
     },
   },
   config = true
-}
+},
+
+--     {
+--       "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+--       config = function()
+--         require("lsp_lines").setup()
+--       end,
+--       lazy = false,
+--     },
+
+
+{
+    'dgagn/diagflow.nvim',
+    -- event = 'LspAttach', This is what I use personnally and it works great
+    opts = {}
+},
 
 }
