@@ -7,7 +7,8 @@ vim.diagnostic.config({
 	virtual_text = {
 		prefix = '●',
 -- 		message = "\n",
-	}
+	},
+-- 	virtual_lines = true, -- from the lsp_lines.nvim plugin
 })
 
 -- vim.diagnostic.message = "\n"
@@ -20,3 +21,4 @@ if vim.g.neovide then
 end
 
 return M
+

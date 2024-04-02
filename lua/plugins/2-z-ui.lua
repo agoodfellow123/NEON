@@ -8,10 +8,12 @@
 	        opts = {
 	         theme = {
               highlights = {
+
                StatusLine = { fg = "#ffffff", bg = "#000000" },
                TabLine = { fg = "#7b8496", bg = "#000000" },
                TabLineFill = { fg = "#7b8496", bg = "#000000" },
                FoldColumn = { fg = "#7b8496", bg = "#000000" },
+
 
                 DiagnosiicVirtualTextError = { bg = "#340500" },
                 DiagnosticVirtualTextWarn = { bg = "#2f3400" },
@@ -23,7 +25,7 @@
 	            transparent = true,
 	            italic_comments = true,
 	            hide_fillchars = true,
--- 	            borderless_telescope = true,
+	            borderless_telescope = false,
 	            terminal_colors = true,
 
 	            require("notify").setup({
@@ -117,6 +119,10 @@
     end,
   },
 
+    {
+    "zeioth/heirline-components.nvim",
+    opts = {}
+  },
 
     --  heirline [ui components]
   --  https://github.com/rebelot/heirline.nvim
@@ -131,6 +137,9 @@
       local lib = require "heirline-components.all"
       return {
         opts = {
+
+        colors = colors,
+
           disable_winbar_cb = function(args) -- We do this to avoid showing it on the greeter.
             local is_disabled = not require("heirline-components.buffer").is_valid(args.buf) or
                 lib.condition.buffer_matches({
@@ -154,27 +163,65 @@
         } or nil,
         statusline = { -- UI statusbar
           hl = { fg = "fg", bg = "bg" },
-          lib.component.mode({
---           mode_text =  { pad_text = "center" },
-          surround = {
-            color = mode_bg, },
-          update = {  "ModeChanged", pattern = "*:*" },
-          mode_colors = {
-            n = "red" ,
-            i = "green",
-            v = "cyan",
-            V =  "cyan",
-            ["\22"] =  "cyan",
-            c =  "orange",
-            s =  "purple",
-            S =  "purple",
-            ["\19"] =  "purple",
-            R =  "orange",
-            r =  "orange",
-            ["!"] =  "red",
-            t =  "red",
-            },
-          }),
+--           lib.component.mode({
+--           mode_text =  { pad_text = "left" },
+--           surround = {
+--             color = "#ffffff", },
+--           update = {  "ModeChanged", pattern = "*:*" },
+--
+--           mode_names = { -- change the strings if you like it vvvvverbose!
+--             n = "N",
+--             no = "N?",
+--             nov = "N?",
+--             noV = "N?",
+--             ["no\22"] = "N?",
+--             niI = "Ni",
+--             niR = "Nr",
+--             niV = "Nv",
+--             nt = "Nt",
+--             v = "V",
+--             vs = "Vs",
+--             V = "V_",
+--             Vs = "Vs",
+--             ["\22"] = "^V",
+--             ["\22s"] = "^V",
+--             s = "S",
+--             S = "S_",
+--             ["\19"] = "^S",
+--             i = "I",
+--             ic = "Ic",
+--             ix = "Ix",
+--             R = "R",
+--             Rc = "Rc",
+--             Rx = "Rx",
+--             Rv = "Rv",
+--             Rvc = "Rv",
+--             Rvx = "Rv",
+--             c = "C",
+--             cv = "Ex",
+--             r = "...",
+--             rm = "M",
+--             ["r?"] = "?",
+--             ["!"] = "!",
+--             t = "T",
+--             },
+--
+--           mode_colors = {
+--             n = "red" ,
+--             i = "green",
+--             v = "cyan",
+--             V =  "cyan",
+--             ["\22"] =  "cyan",
+--             c =  "orange",
+--             s =  "purple",
+--             S =  "purple",
+--             ["\19"] =  "purple",
+--             R =  "orange",
+--             r =  "orange",
+--             ["!"] =  "red",
+--             t =  "red",
+--             },
+--           }),
           lib.component.git_branch(),
           lib.component.file_info(),
           lib.component.git_diff(),
@@ -220,34 +267,34 @@
         desc = "Diagnostics",
       },
       {
-        "<leader>xx",
+        "<leader>lx",
         "<cmd>TroubleToggle<cr>",
         desc = "Diagnostics",
       },
       {
-        "<leader>xw",
+        "<leader>lw",
         "<cmd>Trouble workspace_diagnostics<cr>",
-        desc = "Workspace Diagnostics",
+        desc = "Workspace diagnostics",
       },
       {
-        "<leader>xd",
+        "<leader>ld",
         "<cmd>Trouble document_diagnostics<cr>",
-        desc = "Document Diagnostics",
+        desc = "Document diagnostics",
       },
       {
-        "<leader>xq",
+        "<leader>lq",
         "<cmd>Trouble quickfix<cr>",
         desc = "Quickfix",
       },
       {
-        "<leader>xl",
+        "<leader>ll",
         "<cmd>Trouble loclist<cr>",
-        desc = "Location List",
+        desc = "Location list",
       },
       {
-        "<leader>xr",
+        "<leader>le",
         "<cmd>Trouble lsp_references<cr>",
-        desc = "Lsp References",
+        desc = "Lsp references",
       },
     },
 
@@ -313,4 +360,5 @@
         'nvim-tree/nvim-web-devicons',     -- optional
         }
     },
+
 }

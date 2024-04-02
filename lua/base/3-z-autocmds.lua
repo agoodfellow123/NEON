@@ -41,3 +41,15 @@ require("codecompanion").setup({
       },
   })
 
+  require('diagflow').setup({
+	show_borders = true,
+	border_chars = {
+      top_left = "┌",
+      top_right = "┐",
+      bottom_left = "└",
+      bottom_right = "┘",
+      horizontal = "─",
+      vertical = "│"
+    },
+})
+
