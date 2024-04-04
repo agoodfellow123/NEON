@@ -9,10 +9,10 @@
 	         theme = {
               highlights = {
 
-               StatusLine = { fg = "#ffffff", bg = "#000000" },
-               TabLine = { fg = "#7b8496", bg = "#000000" },
-               TabLineFill = { fg = "#7b8496", bg = "#000000" },
-               FoldColumn = { fg = "#7b8496", bg = "#000000" },
+               StatusLine = { fg = "#ffffff", bg = "NONE" },
+               TabLine = { fg = "#7b8496", bg = "NONE" },
+               TabLineFill = { fg = "#7b8496", bg = "NONE" },
+               FoldColumn = { fg = "#7b8496", bg = "NONE" },
 
 
                 DiagnosiicVirtualTextError = { bg = "#340500" },
@@ -29,7 +29,7 @@
 	            terminal_colors = true,
 
 	            require("notify").setup({
-	              background_colour = "#000000",
+	              background_colour = "black",
 	            })
 	        },
 	},
@@ -43,12 +43,20 @@
     opts = function()
       local dashboard = require("alpha.themes.dashboard")
 
+    vim.api.nvim_set_hl(0, "NeovimDashboardLogo1", { fg = "#ff0086" })
+    vim.api.nvim_set_hl(0, "NeovimDashboardLogo2", { fg = "#ff009c" })
+    vim.api.nvim_set_hl(0, "NeovimDashboardLogo3", { fg = "#ff00b2" })
+    vim.api.nvim_set_hl(0, "NeovimDashboardLogo4", { fg = "#ff009c" })
+    vim.api.nvim_set_hl(0, "NeovimDashboardLogo5", { fg = "#ff0086" })
+
+
+dashboard.section.header.type = "group"
         dashboard.section.header.val = {
-    [[  Y88b Y88  888'Y88   e88 88e   Y88b Y88  ]],
-    [[   Y88b Y8  888 ,'Y  d888 888b   Y88b Y8  ]],
-    [[  b Y88b Y  888C8   C8888 8888D b Y88b Y  ]],
-    [[  8b Y88b   888 ",d  Y888 888P  8b Y88b   ]],
-    [[  88b Y88b  888,d88   "88 88"   88b Y88b  ]],
+    { type = "text", val = [[  Y88b Y88  888'Y88   e88 88e   Y88b Y88  ]], opts = { hl = "NeovimDashboardLogo1", shrink_margin = false, position = "center" } },
+    { type = "text", val = [[   Y88b Y8  888 ,'Y  d888 888b   Y88b Y8  ]], opts = { hl = "NeovimDashboardLogo2", shrink_margin = false, position = "center" } },
+    { type = "text", val = [[  b Y88b Y  888C8   C8888 8888D b Y88b Y  ]], opts = { hl = "NeovimDashboardLogo3", shrink_margin = false, position = "center" } },
+    { type = "text", val = [[  8b Y88b   888 ",d  Y888 888P  8b Y88b   ]], opts = { hl = "NeovimDashboardLogo4", shrink_margin = false, position = "center" } },
+    { type = "text", val = [[  88b Y88b  888,d88   "88 88"   88b Y88b  ]], opts = { hl = "NeovimDashboardLogo5", shrink_margin = false, position = "center" } },
     -- [[-------------  *  --------------]],
     -- [[ Y8b Y88888P  888      e   e     ]],
     -- [[  Y8b Y888P   888     d8b d8b    ]],
@@ -57,8 +65,8 @@
     -- [[     Y8P      888  d888b Y8b Y8b ]],
         }
 
-      dashboard.section.header.opts.hl = "DashboardHeader"
-      vim.cmd "highlight DashboardHeader guifg=#ff00cd"
+--       dashboard.section.header.opts.hl = "DashboardHeader"
+--       vim.cmd "highlight DashboardHeader guifg=#ff00cd"
 --       vim.cmd "highlight DashboardHeader guifg=#F7778F"
 
       -- If on windows, don't show the 'ranger' button
@@ -166,9 +174,9 @@
 --           lib.component.mode({
 --           mode_text =  { pad_text = "left" },
 --           surround = {
---             color = "#ffffff", },
+--             color = mode_colors, },
 --           update = {  "ModeChanged", pattern = "*:*" },
---
+--           mode = vim.fn.mode(1):sub(1, 1),
 --           mode_names = { -- change the strings if you like it vvvvverbose!
 --             n = "N",
 --             no = "N?",
@@ -222,10 +230,10 @@
 --             t =  "red",
 --             },
 --           }),
-          lib.component.git_branch(),
           lib.component.file_info(),
-          lib.component.git_diff(),
           lib.component.diagnostics({
+          lib.component.git_branch(),
+          lib.component.git_diff(),
             on_click = {
               name = "heirline_diagnostic",
               callback = function()
@@ -238,9 +246,14 @@
           lib.component.cmd_info(),
           lib.component.fill(),
           lib.component.lsp(),
---           lib.component.compiler_state(),
           lib.component.virtual_env(),
-          lib.component.nav(),
+          lib.component.compiler_state(),
+          lib.component.nav({
+
+            ruler = false,
+            scrollbar = { padding = { left = 1 }, hl = { fg = "#ffffff" } }, -- if set, displays a interactive square that fills depending the point of the document you are.
+
+          }),
 --           lib.component.mode { surround = { separator = "right" } },
         },
       }

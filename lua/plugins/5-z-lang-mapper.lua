@@ -6,9 +6,12 @@ end
 
 -- Recommended to use lua template string
 local en = [[`qwertyuiop[]asdfghjkl;'\zxcvbnm,./]]
-local tr = [["qwertyuıopğüasdfghjklşi,zxcvbnmöç.]]
+local tr = [["qwertyuıopğüasdfghjklşi,zxcvbnmöç.]] -- vi layout
+-- local tr = [["qwertyuıopğüasdfgjklşi,hzxcvbnmöç.]]
+
 local en_shift = [[~QWERTYUIOP{}ASDFGHJKL:"|ZXCVBNM<>?]]
-local tr_shift = [[éQWERTYUIOPĞÜASDFGHJKLŞİ;ZXCVBNMÖÇ:]]
+local tr_shift = [[éQWERTYUIOPĞÜASDFGHJKLŞİ;ZXCVBNMÖÇ:]] -- vi layout
+-- local tr_shift = [[éQWERTYUIOPĞÜASDFGJKLŞİ;HZXCVBNMÖÇ:]]
 
 vim.opt.langmap = vim.fn.join({
     -- | `to` should be first     | `from` should be second
@@ -42,7 +45,9 @@ local default_config = {
       ---It should be the same as result string of `get_current_layout_id()`
       id = 'tr',
       ---@type string Fallback layout to translate. Should be same length as default layout
-      layout = [[éQWERTYUIOPĞÜASDFGHJKLŞİ;ZXCVBNMÖÇ:"qwertyuıopğüasdfghjklşi,zxcvbnmöç.]],
+      layout = [[éQWERTYUIOPĞÜASDFGHJKLŞİ;ZXCVBNMÖÇ:"qwertyuıopğüasdfghjklşi,zxcvbnmöç.]],  -- vi layout
+
+--       layout = [[éQWERTYUIOPĞÜASDFGJKLŞİ;HZXCVBNMÖÇ:"qwertyuıopğüasdfgjklşi,hzxcvbnmöç.]],
       ---@type string if you need to specify default layout for this fallback layout
     },
   },
