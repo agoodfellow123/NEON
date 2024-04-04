@@ -7,3 +7,5 @@ F6 Compiler menu
 F7 Terminal
 
 :TSInstall yaml
+
+install ollama to your system.
