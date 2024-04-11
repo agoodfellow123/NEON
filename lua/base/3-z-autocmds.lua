@@ -24,9 +24,9 @@ global_note.setup({
   directory = "./notes/",
   title = "Project Notes",
 })
-vim.keymap.set("n", "<leader>n", global_note.toggle_note, {
-  desc = "Toggle global note",
-})
+-- vim.keymap.set("n", "<leader>n", global_note.toggle_note, {
+--   desc = "Toggle global note",
+-- })
 
 require("codecompanion").setup({
       adapters = {
@@ -53,3 +53,9 @@ require("codecompanion").setup({
     },
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.formatoptions:remove({ 'r', 'o' })
+  end,
+})

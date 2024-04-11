@@ -20,6 +20,15 @@
                 DiagnosticVirtualTextInfo = { bg = "#001534" },
                 DiagnosticVirtualTextHint = { bg = "#002f34" },
 
+
+                    HeirlineInactive = { bg = "#222222" },
+                    HeirlineNormal = { bg = "#040040" },
+                    HeirlineVisual = { bg = "#003c40" },
+                    HeirlineReplace = { bg = "#004028" },
+                    HeirlineCommand = { bg = "#004028" },
+                    HeirlineInsert = { bg = "#390040" },
+                    HeirlineTerminal = { bg = "#400000" },
+
                },
               },
 	            transparent = true,
@@ -29,7 +38,7 @@
 	            terminal_colors = true,
 
 	            require("notify").setup({
-	              background_colour = "black",
+	              background_colour = "#000000",
 	            })
 	        },
 	},
@@ -76,7 +85,7 @@ dashboard.section.header.type = "group"
       -- Buttons
       dashboard.section.buttons.val = {
         dashboard.button("n", "  New File", "<cmd>ene<CR>"),
-        dashboard.button("f", "🗁  Find File", "<cmd>Telescope find_files<CR>"),
+        dashboard.button("f", "🗁  Find File", "<cmd>Telescope find_files hidden=true<CR>"),
         dashboard.button("e", "  Recent Files", "<cmd>Telescope oldfiles<CR>"),
         dashboard.button("t", "  Find Text", "<cmd> Telescope live_grep<cr>"),
         -- ranger_button,
@@ -171,6 +180,7 @@ dashboard.section.header.type = "group"
         } or nil,
         statusline = { -- UI statusbar
           hl = { fg = "fg", bg = "bg" },
+--             lib.component.mode(),
 --           lib.component.mode({
 --           mode_text =  { pad_text = "left" },
 --           surround = {
