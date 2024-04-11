@@ -266,7 +266,7 @@ if vim.g.neovide then
     maps.n["<C-Down>"] = {"<cmd>lua vim.g.neovide_transparency = vim.g.neovide_transparency + 0.1<cr>", desc = "Decrease Neovide transparency" }
 end
 
-
+maps.n["<leader>Dn"] = {"<cmd>GlobalNote<cr>"}
 
 
 utils.set_mappings(maps)

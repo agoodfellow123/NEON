@@ -145,7 +145,7 @@ return {
     "max397574/better-escape.nvim",
     event = "InsertCharPre",
     opts = {
-      mapping = {},
+      mapping = {"jj"},
       timeout = 300,
     },
   },
@@ -326,6 +326,7 @@ return {
       local utils = require("base.utils")
       local get_icon = utils.get_icon
       return {
+
         auto_clean_after_session_restore = true,
         close_if_last_window = true,
         buffers = {
@@ -480,6 +481,19 @@ return {
           },
         },
         filesystem = {
+
+          filtered_items = {
+            visible = true,
+            show_hidden_count = true,
+            hide_dotfiles = false,
+            hide_gitignored = true,
+            hide_by_name = {
+              -- '.git',
+              -- '.DS_Store',
+              -- 'thumbs.db',
+              },
+          },
+
           follow_current_file = {
             enabled = true,
           },
