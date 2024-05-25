@@ -4,117 +4,117 @@ local ui = require "base.utils.ui"
 local maps = require("base.utils").get_mappings_template()
 
 
--- org_key = {
--- ">",
--- "{",
--- "\"",
--- "<",
--- ":",
--- "}",
--- "±",
--- "@",
--- "#",
--- "$",
--- "^",
--- "&",
--- "*",
--- "(",
--- ")",
--- "_",
--- "+",
--- "~",
--- "|",
--- "?",
--- ".",
--- "[",
--- "\'",
--- ",",
--- ";",
--- "]",
--- "i",
--- "§",
--- "-",
--- "=",
--- "\\",
--- "/",
--- "`",
--- "™",
--- "£",
--- "¢",
--- "∞",
--- "¶",
--- "•",
--- "ª",
--- "º",
--- "–",
--- "≠",
--- "œ",
--- "´",
--- "†",
--- "¥",
--- "‘",
--- "…",
--- "«",
--- }
---
--- tur_key = {
--- "Ç",
--- "Ğ",
--- "İ",
--- "Ö",
--- "Ş",
--- "Ü",
--- "é",
--- "'",
--- "^",
--- "+",
--- "&",
--- "/",
--- "(",
--- ")",
--- "=",
--- "?",
--- "_",
--- ">",
--- ";",
--- ":",
--- "ç",
--- "ğ",
--- "i",
--- "ö",
--- "ş",
--- "ü",
--- "ı",
--- "\"",
--- "*",
--- "-",
--- ",",
--- ".",
--- "<",
--- "£",
--- "#",
--- "$",
--- "½",
--- "{",
--- "[",
--- "]",
--- "}",
--- "\\",
--- "|",
--- "@",
--- "€",
--- "₺",
--- "¥",
--- "~",
--- "´",
--- "`",
--- }
---
--- for i in ipairs(tur_key) do
---     maps.n[tur_key[i]] = {org_key[i]}
---     maps.v[tur_key[i]] = {org_key[i]}
---     maps.o[tur_key[i]] = {org_key[i]}
--- end
+org_key = {
+">",
+"{",
+"\"",
+"<",
+":",
+"}",
+"±",
+"@",
+"#",
+"$",
+"^",
+"&",
+"*",
+"(",
+")",
+"_",
+"+",
+"~",
+"|",
+"?",
+".",
+"[",
+"\'",
+",",
+";",
+"]",
+"i",
+"§",
+"-",
+"=",
+"\\",
+"/",
+"`",
+"™",
+"£",
+"¢",
+"∞",
+"¶",
+"•",
+"ª",
+"º",
+"–",
+"≠",
+"œ",
+"´",
+"†",
+"¥",
+"‘",
+"…",
+"«",
+}
+
+tur_key = {
+"Ç",
+"Ğ",
+"İ",
+"Ö",
+"Ş",
+"Ü",
+"é",
+"'",
+"^",
+"+",
+"&",
+"/",
+"(",
+")",
+"=",
+"?",
+"_",
+">",
+";",
+":",
+"ç",
+"ğ",
+"i",
+"ö",
+"ş",
+"ü",
+"ı",
+"\"",
+"*",
+"-",
+",",
+".",
+"<",
+"£",
+"#",
+"$",
+"½",
+"{",
+"[",
+"]",
+"}",
+"\\",
+"|",
+"@",
+"€",
+"₺",
+"¥",
+"~",
+"´",
+"`",
+}
+
+for i in ipairs(tur_key) do
+    maps.n[tur_key[i]] = {org_key[i]}
+    maps.v[tur_key[i]] = {org_key[i]}
+    maps.o[tur_key[i]] = {org_key[i]}
+end
 
 
 
@@ -156,21 +156,21 @@ vim.opt.whichwrap = vim.opt.whichwrap + "l"
 -- maps.n["|"] = {"\""}
 -- maps.n["H"] = {"|"}
 
--- maps.n["j"] = {"h"}
--- maps.n["k"] = {"gj"}
--- maps.n["l"] = {"gk"}
--- maps.n["ş"] = {"l"}
--- maps.n["i"] = {";"}
--- maps.n[","] = {"'"}
--- maps.n["h"] = {"\\"}
---
--- maps.n["J"] = {"H"}
--- maps.n["K"] = {"J"}
--- maps.n["L"] = {"K"}
--- maps.n["Ş"] = {"L"}
--- maps.n["İ"] = {":"}
--- maps.n[";"] = {"\""}
--- maps.n["H"] = {"|"}
+maps.n["j"] = {"h"}
+maps.n["k"] = {"gj"}
+maps.n["l"] = {"gk"}
+maps.n["ş"] = {"l"}
+maps.n["i"] = {";"}
+maps.n[","] = {"'"}
+maps.n["h"] = {"\\"}
+
+maps.n["J"] = {"H"}
+maps.n["K"] = {"J"}
+maps.n["L"] = {"K"}
+maps.n["Ş"] = {"L"}
+maps.n["İ"] = {":"}
+maps.n[";"] = {"\""}
+maps.n["H"] = {"|"}
 
 -- maps.v["j"] = {"h"}
 -- maps.v["k"] = {"gj"}
@@ -188,21 +188,21 @@ vim.opt.whichwrap = vim.opt.whichwrap + "l"
 -- maps.v["|"] = {"\""}
 -- maps.v["H"] = {"|"}
 
--- maps.v["j"] = {"h"}
--- maps.v["k"] = {"gj"}
--- maps.v["l"] = {"gk"}
--- maps.v["ş"] = {"l"}
--- maps.v["i"] = {";"}
--- maps.v[","] = {"'"}
--- maps.v["h"] = {"\\"}
---
--- maps.v["J"] = {"H"}
--- maps.v["K"] = {"J"}
--- maps.v["L"] = {"K"}
--- maps.v["Ş"] = {"L"}
--- maps.v["İ"] = {":"}
--- maps.v[";"] = {"\""}
--- maps.v["H"] = {"|"}
+maps.v["j"] = {"h"}
+maps.v["k"] = {"gj"}
+maps.v["l"] = {"gk"}
+maps.v["ş"] = {"l"}
+maps.v["i"] = {";"}
+maps.v[","] = {"'"}
+maps.v["h"] = {"\\"}
+
+maps.v["J"] = {"H"}
+maps.v["K"] = {"J"}
+maps.v["L"] = {"K"}
+maps.v["Ş"] = {"L"}
+maps.v["İ"] = {":"}
+maps.v[";"] = {"\""}
+maps.v["H"] = {"|"}
 
 -- maps.o["j"] = {"h"}
 -- maps.o["k"] = {"gj"}
@@ -220,32 +220,32 @@ vim.opt.whichwrap = vim.opt.whichwrap + "l"
 -- maps.o["|"] = {"\""}
 -- maps.o["H"] = {"|"}
 
--- maps.o["j"] = {"h"}
--- maps.o["k"] = {"gj"}
--- maps.o["l"] = {"gk"}
--- maps.o["ş"] = {"l"}
--- maps.o["i"] = {";"}
--- maps.o[","] = {"'"}
--- maps.o["h"] = {"\\"}
---
--- maps.o["J"] = {"H"}
--- maps.o["K"] = {"J"}
--- maps.o["L"] = {"K"}
--- maps.o["Ş"] = {"L"}
--- maps.o["İ"] = {":"}
--- maps.o[";"] = {"\""}
--- maps.o["H"] = {"|"}
---
--- maps.n["H"] = { "<cmd>vsplit<cr>", desc = "Vertical Split" }
--- maps.n["h"] = { "<cmd>split<cr>", desc = "Horizontal Split" }
+maps.o["j"] = {"h"}
+maps.o["k"] = {"gj"}
+maps.o["l"] = {"gk"}
+maps.o["ş"] = {"l"}
+maps.o["i"] = {";"}
+maps.o[","] = {"'"}
+maps.o["h"] = {"\\"}
+
+maps.o["J"] = {"H"}
+maps.o["K"] = {"J"}
+maps.o["L"] = {"K"}
+maps.o["Ş"] = {"L"}
+maps.o["İ"] = {":"}
+maps.o[";"] = {"\""}
+maps.o["H"] = {"|"}
+
+maps.n["H"] = { "<cmd>vsplit<cr>", desc = "Vertical Split" }
+maps.n["h"] = { "<cmd>split<cr>", desc = "Horizontal Split" }
 
 -- maps.n["\\"] = { "<cmd>lua require(\"which-key\").show(\"'\", {mode = \"n\", auto = true})<cr>" }
 -- maps.n["|"] = { "<cmd>lua require(\"which-key\").show(\"\\\"\", {mode = \"n\", auto = true})<cr>" }
 -- maps.n["|"] = { "<cmd>lua require(\"which-key\").show(\"\\\"\", {mode = \"v\", auto = true})<cr>" }
 
--- maps.n[","] = { "<cmd>lua require(\"which-key\").show(\"'\", {mode = \"n\", auto = true})<cr>" }
--- maps.n[";"] = { "<cmd>lua require(\"which-key\").show(\"\\\"\", {mode = \"n\", auto = true})<cr>" }
--- maps.n[";"] = { "<cmd>lua require(\"which-key\").show(\"\\\"\", {mode = \"v\", auto = true})<cr>" }
+maps.n[","] = { "<cmd>lua require(\"which-key\").show(\"'\", {mode = \"n\", auto = true})<cr>" }
+maps.n[";"] = { "<cmd>lua require(\"which-key\").show(\"\\\"\", {mode = \"n\", auto = true})<cr>" }
+maps.n[";"] = { "<cmd>lua require(\"which-key\").show(\"\\\"\", {mode = \"v\", auto = true})<cr>" }
 
 -- if vim.g.neovide then
 --     function toggle_nvde_transparancy()
