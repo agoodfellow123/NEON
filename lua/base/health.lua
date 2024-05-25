@@ -4,6 +4,7 @@
 -- To use it run the command :healthcheck base
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 local M = {}
 
 local health = {
@@ -255,6 +256,8 @@ end
 
 return M
 =======
+=======
+>>>>>>> aeedb92a84c15ec4dcc5fa4d2d3dcac6bad57a64
 -- local M = {}
 --
 -- local health = {
@@ -505,4 +508,7 @@ return M
 -- end
 --
 -- return M
+<<<<<<< HEAD
 >>>>>>> ad0f5e9 (up)
+=======
+>>>>>>> aeedb92a84c15ec4dcc5fa4d2d3dcac6bad57a64

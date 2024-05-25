@@ -668,6 +668,7 @@ return {
   -- https://github.com/kosayoda/nvim-lightbulb
   -- Show a lightbulb where a code action is available
 <<<<<<< HEAD
+<<<<<<< HEAD
 --   {
 --     'kosayoda/nvim-lightbulb',
 --     enabled = vim.g.codeactions_enabled,
@@ -692,6 +693,8 @@ return {
 --     config = function(_, opts) require("nvim-lightbulb").setup(opts) end
 --   },
 =======
+=======
+>>>>>>> aeedb92a84c15ec4dcc5fa4d2d3dcac6bad57a64
 --   {
 --     'kosayoda/nvim-lightbulb',
 --     enabled = vim.g.codeactions_enabled,
@@ -715,7 +718,10 @@ return {
 --     },
 --     config = function(_, opts) require("nvim-lightbulb").setup(opts) end
 --   },
+<<<<<<< HEAD
 >>>>>>> aeedb92 (up)
+=======
+>>>>>>> aeedb92a84c15ec4dcc5fa4d2d3dcac6bad57a64
 
   -- distroupdate.nvim [distro update]
   -- https://github.com/Zeioth/distroupdate.nvim
