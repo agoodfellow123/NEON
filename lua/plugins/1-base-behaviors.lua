@@ -145,7 +145,7 @@ return {
     "max397574/better-escape.nvim",
     event = "InsertCharPre",
     opts = {
-      mapping = {"jj"},
+      mapping = {"hh"},
       timeout = 300,
     },
   },
@@ -667,29 +667,29 @@ return {
   -- nvim-lightbulb [lightbulb for code actions]
   -- https://github.com/kosayoda/nvim-lightbulb
   -- Show a lightbulb where a code action is available
-  {
-    'kosayoda/nvim-lightbulb',
-    enabled = vim.g.codeactions_enabled,
-    event = "VeryLazy",
-    opts = {
-      action_kinds = {  -- show only for relevant code actions.
-        "quickfix",
-      },
-      ignore = {
-        ft = { "lua" }, -- ignore filetypes with bad code actions.
-      },
-      autocmd = {
-        enabled = true,
-        updatetime = 100,
-      },
-      sign = { enabled = false },
-      virtual_text = {
-        enabled = true,
-        text = "💡"
-      }
-    },
-    config = function(_, opts) require("nvim-lightbulb").setup(opts) end
-  },
+--   {
+--     'kosayoda/nvim-lightbulb',
+--     enabled = vim.g.codeactions_enabled,
+--     event = "VeryLazy",
+--     opts = {
+--       action_kinds = {  -- show only for relevant code actions.
+--         "quickfix",
+--       },
+--       ignore = {
+--         ft = { "lua" }, -- ignore filetypes with bad code actions.
+--       },
+--       autocmd = {
+--         enabled = true,
+--         updatetime = 100,
+--       },
+--       sign = { enabled = false },
+--       virtual_text = {
+--         enabled = true,
+--         text = "💡"
+--       }
+--     },
+--     config = function(_, opts) require("nvim-lightbulb").setup(opts) end
+--   },
 
   -- distroupdate.nvim [distro update]
   -- https://github.com/Zeioth/distroupdate.nvim
